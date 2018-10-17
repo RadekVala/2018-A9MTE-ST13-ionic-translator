@@ -11,4 +11,8 @@ export class HomePage {
 
   }
 
+  public btnTranslateClicked(userInput:string):void {
+    console.log(userInput);
+  }
+
 }
