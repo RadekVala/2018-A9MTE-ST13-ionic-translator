@@ -12,7 +12,7 @@ import { HistoryRecord } from '../../models/history-record';
 @Injectable()
 export class HistoryProvider {
 
-  private historyArray:Array<HistoryRecord>;
+  private historyArray:Array<HistoryRecord> = [];
 
   constructor(private storage:Storage) {
     console.log('Hello HistoryProvider Provider');
