@@ -16,6 +16,8 @@ import { TranslationProvider } from '../providers/translation/translation';
 import { HistoryPage } from '../pages/history/history';
 import { HistoryProvider } from '../providers/history/history';
 
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -45,7 +47,8 @@ import { HistoryProvider } from '../providers/history/history';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TranslationProvider,
-    HistoryProvider
+    HistoryProvider,
+    TextToSpeech
   ]
 })
 export class AppModule {}
