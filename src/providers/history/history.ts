@@ -16,6 +16,16 @@ export class HistoryProvider {
 
   constructor(private storage:Storage) {
     console.log('Hello HistoryProvider Provider');
+
+    // load data from persistent Storage
+    this.storage.get('history').then(
+      (value) => {
+        if(value){
+          // only if we got some history from Storage, put its value into array
+          this.historyArray = JSON.parse(value);
+        }
+      }
+    );
   }
 
   public saveToStorage(from:string, to:string):void{
@@ -25,5 +35,9 @@ export class HistoryProvider {
     this.historyArray.push(record);
     // save temporary historyArray to Storage
     this.storage.set('history',JSON.stringify(this.historyArray));
+  }
+
+  public getFromStorage(){
+    return this.historyArray;
   }
 }
